@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('mock server test') {
             steps {
-                sh 'echo test mockserver'
+                git url: 'https://github.com/zoomout/mockserver'
+                sh 'mvn clean install'
             }
         }
     }
